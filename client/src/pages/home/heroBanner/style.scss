@@ -2,7 +2,7 @@
 
 .hero-container {
     width: 100%;
-    width: 350px;
+    height: 400px;
     background-color: var(--black);
     color: white;
     display: flex;
@@ -10,6 +10,7 @@
     position: relative;
     @include md {
         height: 700px;
+        // width: 100%;
     }
     .backdrop-img {
         width: 100%;
@@ -18,6 +19,96 @@
         top: 0;
         left: 0;
         overflow: hidden;
-        opacity: 0.5;
+        opacity: 0.6;
+        .lazy-load-image-background {
+            width: 100%;
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+    .opacity-layer {
+        width: 100%;
+        height: 250px;
+        // position: absolute;
+        background: linear-gradient(
+            180deg,
+            rgba(4, 21, 45, 0),
+            #04152d
+        );
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .heroBanner-content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        max-width: 800px;
+        position: relative;
+        color: #ffffff;
+        margin: 0 auto;
+        .title {
+            font-size: 45px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            @include md {
+                font-size: 60px;
+                font-weight: 800;
+                // margin-bottom: 0;
+            }
+        }
+        .sub-title {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 40px;
+            @include md {
+                font-size: 20px;
+            }
+        }
+        .searchInput {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            input {
+                width: calc(100% - 100px);
+                height: 50px;
+                background-color: #ffffff;
+                outline: none;
+                border: none;
+                border-radius: 30px 0 0 30px;
+                padding: 5px 15px;
+                font-size: 15px;
+                @include md {
+                    font-size: 25px;
+                    height: 60px;
+                    width: calc(100% - 180px);
+                    padding: 5px 25px;
+                }
+            }
+            button {
+                width: 100px;
+                height: 50px;
+                font-size: 20px;
+                padding: 5px 10px;
+                font-weight: 700px;
+                outline: 0;
+                background: var(--gradient);
+                color: #ffffff;
+                cursor: pointer;
+                border: none;
+                border-radius: 0 30px 30px 0;
+                @include md {
+                    width: 150px;
+                    height: 60px;
+                    font-size: 22px;
+                }
+            }
+        }
     }
 }

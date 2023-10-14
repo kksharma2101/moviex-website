@@ -31,7 +31,7 @@ const HeroBanner = () => {
             {!loading && <div className="backdrop-img">
                 <Img src={background} alt='' />
             </div>}
-            <div className="opecity-layer"></div>
+            <div className="opacity-layer"></div>
 
             <ContentWrapper>
                 <div className="heroBanner-content">
