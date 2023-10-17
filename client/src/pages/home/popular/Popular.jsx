@@ -6,23 +6,23 @@ import Carousel from '../../../components/carousel/Carousel.jsx';
 
 
 
-const Trending = () => {
-    const [endPoints, setEndpoints] = useState("day");
-    const { data, loading } = useFetch(`/trending/all/${endPoints}`);
+const Popular = () => {
+    const [endPoints, setEndpoints] = useState("movie");
+    const { data, loading } = useFetch(`/${endPoints}/popular`);
 
     const onTabChange = (tab) => {
-        setEndpoints(tab === "Day" ? "day" : "week");
+        setEndpoints(tab === "Movies" ? "movie" : "tv");
     };
 
     return (
         <div className='carouselSection'>
             <ContentWrapper>
-                <span className='carouselTitle'>Trending</span>
-                <SwitchTabs data={["Day", "Week"]} onTabChange={onTabChange} />
+                <span className='carouselTitle'>What's Popular</span>
+                <SwitchTabs data={["Movies", "TV Shows"]} onTabChange={onTabChange} />
             </ContentWrapper>
-            <Carousel data={data?.results} loading={loading} />
+            <Carousel data={data?.results} loading={loading} endPoints={endPoints} />
         </div>
     )
 }
 
-export default Trending;
+export default Popular;
