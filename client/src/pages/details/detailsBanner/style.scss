@@ -85,6 +85,11 @@
             .genres {
                 margin-bottom: 25px;
                 flex-flow: row wrap;
+                background-color: rgb(249, 131, 150);
+                padding: 5px;
+                margin-top: 7px;
+                border-radius: 3px;
+                width: fit-content !important;
             }
             .overview {
                 margin-bottom: 25px;

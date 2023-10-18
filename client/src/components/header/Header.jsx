@@ -48,7 +48,7 @@ const Header = () => {
         }
         setTimeout(() => {
             setShowSearch(false)
-        }, 1000);
+        }, 10000);
     };
 
     const openSearch = () => {
@@ -74,13 +74,13 @@ const Header = () => {
         <header className={`header ${mobileMenu ? "mobileView" : ""} ${show}`}>
             <ContentWrapper>
                 <div className="logo">
-                    <img src={logo} alt="logo" />
+                    <img src={logo} alt="logo" onClick={() => navigate("/")} />
                 </div>
                 <ul className="menuItems">
                     <li className="menuItem" onClick={() => navigationHandler("movie")}>Movies</li>
                     <li className="menuItem" onClick={() => navigationHandler("tv")}>TV Shows</li>
                     <li className="menuItem">
-                        <HiOutlineSearch />
+                        <HiOutlineSearch onClick={() => openSearch()} />
                     </li>
                 </ul>
                 <div className="mobileMenuItems">
