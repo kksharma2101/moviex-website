@@ -12,7 +12,7 @@ import Details from "./pages/details/Details.jsx";
 import Explore from "./pages/explore/Explore.jsx";
 import Error from "./pages/error404/Error.jsx";
 import SearchResult from "./pages/searchResults/SearchResults.jsx";
-import { all } from 'axios';
+// import { all } from 'axios';
 
 
 function App() {
